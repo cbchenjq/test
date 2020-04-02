@@ -1,0 +1,233 @@
+
+    <link href="__CSS__/index_reset.css"><link>
+    <style>
+      .hides{display: none;}
+      .animate-activ{transform: rolate();
+      font-size: 18px;
+      font-weight: bold;
+      transition: box-shadow 1s,height 2s,width 2s,margin 2s,padding 2s,font-size .5s;
+      box-shadow: 5px 5px 15px #000;}
+      .list2 ul li{margin:16px 0;}
+    </style>
+    <!-- 内容1部分 -->
+    <div class="content1">
+        <div class="content">
+          <div class="title">
+            <h3>喜邦品牌十年深耕化妆品产业</h3>
+            <p>THE COSMETICS INDUSTRY</p>
+          </div>
+        </div>
+    </div>
+    <div class="content1">
+        <div class="content list">
+          <img src="__IMG__/icon1.png" class="pull-left" alt="">
+          <p>{$news_title->title}<br><br><span class="hides">We blend in creative packaging and market, the tinkling of jade in the range of
+            cosmetics brand tide come to the fore</span></p>
+          
+          <!-- <p>sss</p> -->
+          <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="content1">
+        <div class="content list">
+          <img src="__IMG__/icon2.png" class="pull-left" alt="">
+          <p>{$case_title->title}<br><br><span class="hides">We blend in creative packaging and market, the tinkling of jade in the range of
+            cosmetics brand tide come to the fore</span></p>
+          
+          <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="content1">
+        <div class="content list">
+          <img src="__IMG__/icon3.png" class="pull-left" alt="">
+          <p style="padding-top:20px ;">{$team_title->title}<br><br><span class="hides">We blend in creative packaging and market, the tinkling of jade in the range of
+            cosmetics brand tide come to the fore</span></p>
+          
+          <div class="clearfix"></div>
+        </div>
+    </div>
+    <script src="__JS__/content1event.js"></script>
+    <!-- 内容2部分 -->
+    <div class="content2">
+      <div class="content">
+
+        <div class="title pull-left">
+          <h3>我们最近的作品</h3>
+          <p>WE DO WORK LATELY</p>
+        </div>
+
+        <!-- <div class="right pull-right">
+          <span>近期作品</span>  -->
+           <!--active 当前的，被选中的-->
+          <!-- <span class="active">全部作品</span>
+        </div> -->
+
+        <div class="clearfix"></div>  <!--清除浮动-->
+
+        <img src="__IMG__/zp_pic1.jpg" alt="" class="zp img-responsive">
+        <div class="desc"> <!-- 介绍 -->
+          <h3>{$case[0]->title}</h3>
+          <p>{$case[0]->content}...</p>
+          <a href="/home/cases/case_desc/id/{$case[0]->cid}" style="display: block;width: 30px;height: 30px;position: absolute;top: 224px;left: 150px;">
+            <img src="__IMG__/arrow.jpg" alt="" class="arrow" style="margin: 0;">
+          </a>
+        </div>
+        <a href=" {:url('cases/case_list')}" class="more">MORE</a>
+      </div>
+    </div>
+    
+    <div class="content3">
+      <div class="content">
+
+        <div class="title pull-left">
+          <h3>资深专家顾问团队，100大新锐设计师阵容</h3>
+          <p>RECOMMENDED DESIGNER</p>
+        </div>
+
+        <!-- <div class="right pull-right">
+          <span>精英团队</span>  -->
+           <!--active 当前的，被选中的-->
+          <!-- <span class="active">所有团队</span>
+        </div> -->
+
+        <div class="clearfix"></div>  <!--清除浮动-->
+
+        <div class="people">
+          <ul class="list fl">
+            {volist name='team' id='v'}
+            <li class="fl desc">
+              <div style="height: 235px;" class="fl">
+                <img  src="{$v->img_url}" alt="" height="235" width="136">
+              </div>
+              
+              <div class="desc2 fl" style="display: none;">
+                <h1>{$v->name}</h1>
+                <h3>{$v->title}</h3>
+                <p>{$v->intro|mb_substr=0,20}...</p>
+                <img src="__IMG__/arrow.png" alt="" class="arrow">
+              </div>
+              
+            </li>
+           {/volist}
+          </ul>  
+          <style>
+            .people ul li:first-child div:first-child img{width:193px;height: 330px;}
+            /* .people ul li:first-child>div{display: block !important;} */
+          </style>
+        </div>
+        <div class="clearfix" style="height: 380px;"></div>
+        <a href="{:url('team/list')} " class="more">MORE</a>
+
+      </div>
+    </div>
+    <script src="__JS__/team_activ.js"></script>
+    <div class="content4">
+      <div class="content">
+
+        <div class="title pull-left">
+          <h3>{$new_type[0]['name']}</h3>
+          <p>NEWS INFORMATION</p>
+        </div>
+        <div class="right pull-right">
+          <span>{$new_type[1]['name']}</span>
+          <span class="active">{$new_type[2]['name']}</span>
+        </div>
+
+        <div class="clearfix"></div>
+
+      </div>
+    </div>
+
+    <!-- <div class="content4 active">
+      <div class="content">
+        <div class="list1">
+          <img src="__IMG__/fengjing.png" alt="">
+          <div class="text">
+            <h1>{$news[0]->title}</h1>
+            <h3>{$news[0]->add_time|date='Y-m-d',###}</h3>
+            <p>{$news[0]->content|mb_substr=0,40}...</p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div> -->
+    <div class="content4">
+      <div class="content">
+        <div class="list2">
+          <ul>
+            <li>
+              <div class="list3">
+                    <div class="date"><span>{$news[1]->add_time|date='m',###}</span><span>{$news[1]->add_time|date=
+                      'd',###}</span></div>
+                    <img src="__IMG__/fengjing2.png" alt="">
+                    <div class="text">
+                      <h3>{$news[1]->title}</h3>
+                      <p>{$news[1]->content|mb_substr=1,40}...</p>
+                    </div>
+              </div>
+              
+              <div class="list1" style="display: none;">
+                <img src="__IMG__/fengjing.png" alt="">
+                <div class="text">
+                  <h1>{$news[1]->title}</h1>
+                  <h3>{$news[1]->add_time|date='Y-m-d',###}</h3>
+                  <p>{$news[1]->content|mb_substr=0,40}...</p>
+                </div>
+              </div>
+            </li>            
+            <li>
+              <div class="list3">
+                    <div class="date"><span>{$news[2]->add_time|date='m',###}</span><span>{$news[2]->add_time|date=
+                      'd',###}</span></div>
+                    <img src="__IMG__/fengjing2.png" alt="">
+                    <div class="text">
+                      <h3>{$news[2]->title}</h3>
+                      <p>{$news[2]->content|mb_substr=0,40}...</p>
+                    </div>
+              </div>
+              
+              <div class="list1" style="display: none;">
+                <img src="__IMG__/fengjing.png" alt="">
+                <div class="text">
+                  <h1>{$news[2]->title}</h1>
+                  <h3>{$news[2]->add_time|date='Y-m-d',###}</h3>
+                  <p>{$news[2]->content|mb_substr=0,40}...</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="list3">
+                  <div class="date"><span>{$news[0]->add_time|date='m',###}</span><span>{$news[0]->add_time|date='d',###}</span></div>
+                  <img src="__IMG__/fengjing3.png" alt="">
+                  <div class="text">
+                  <h3>{$news[0]->title}</h3>
+                  <p>{$news[0]->content|mb_substr=0,40}...</p>
+                </div>
+              </div>
+              
+              <div class="list1" style="display: none;">
+                <img src="__IMG__/fengjing.png" alt="">
+                <div class="text">
+                  <h1>{$news[0]->title}</h1>
+                  <h3>{$news[0]->add_time|date='Y-m-d',###}</h3>
+                  <p>{$news[0]->content|mb_substr=0,40}...</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="content4">
+      <div class="content">
+        <a href=" {:url('Cnews/list')}" class="more">MORE</a>
+      </div>
+    </div>
+    <script src="__JS__/content4_toggle.js"></script>
+
+
+
+

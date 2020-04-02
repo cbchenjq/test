@@ -1,0 +1,113 @@
+
+
+    
+
+	<!-- 栅格系统的结构（看文档，看怎么使用？） -->
+	<!-- <div class="container" style="background: red;">
+		xxxx
+	</div> -->
+	<!-- <div class="container-fluid" style="background: blue;">
+		yyyy
+	</div> -->
+
+	<div class="container">
+		<div class="row menu">
+			<div class="col-xs-1 col-sm-1 col-md-1 text-right">
+				<a href=""></a>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 text-right">
+				<a href="" class="active">全部新闻</a>
+			</div>
+			{volist name='new_type' id='v'}
+			<div class="col-xs-2 col-sm-2 col-md-2 text-right">
+				<a href="">{$v['name']}</a>
+			</div>
+			{/volist}
+			<!-- <div class="col-xs-2 col-sm-2 col-md-2 text-right">
+				<a href="">行业新闻</a>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 text-right">
+				<a href="">项目动态</a>
+			</div>
+			<div class="col-xs-2 col-sm-2 col-md-2 text-right">
+				<a href="">最新资讯</a>
+			</div> -->
+		</div>
+
+		<div class="pos">
+			所在位置：<a href="index.html">首页</a> - 资讯
+		</div>
+
+		<div class="title">
+			<h3>新闻展示</h3>
+		</div>
+
+		<div class="row list">
+			{volist name='news' id='v'}
+			<div class="col-md-6 box">
+				<div class="date1">20<span>2015-03</span></div>
+				<a href="zixun_desc.html"><img src="__IMG__/{$v->img_url}" alt="" class="img-responsive"></a>
+				<h3>{$v->title}</h3>
+				<div class="date2">{$v->addtime}</div>
+				<p>{$v->content|mb_substr=0,60}</p>
+			</div>
+			{/volist}
+			<!-- <div class="col-md-6 box">
+				<div class="date1">20<span>2015-03</span></div>
+				<a href="zixun_desc.html"><img src="__IMG__/list2.png" alt="" class="img-responsive"></a>
+				<h3>实体店该如何面对电商冲击</h3>
+				<div class="date2">2015-03-20</div>
+				<p>熬夜肌肤修复专家。天姿曼为广州美莲葆公司旗下品牌，十年来专注研发面膜，专业生产面膜和专精覃思探索消费者的需求，不断创新十年来专注研发面膜。</p>
+			</div>
+			<div class="col-md-6 box">
+				<div class="date1">20<span>2015-03</span></div>
+				<a href="zixun_desc.html"><img src="__IMG__/list3.png" alt="" class="img-responsive"></a>
+				<h3>实体店该如何面对电商冲击</h3>
+				<div class="date2">2015-03-20</div>
+				<p>熬夜肌肤修复专家。天姿曼为广州美莲葆公司旗下品牌，十年来专注研发面膜，专业生产面膜和专精覃思探索消费者的需求，不断创新十年来专注研发面膜。</p>
+			</div>
+			<div class="col-md-6 box">
+				<div class="date1">20<span>2015-03</span></div>
+				<a href="zixun_desc.html"><img src="__IMG__/list4.png" alt="" class="img-responsive"></a>
+				<h3>实体店该如何面对电商冲击</h3>
+				<div class="date2">2015-03-20</div>
+				<p>熬夜肌肤修复专家。天姿曼为广州美莲葆公司旗下品牌，十年来专注研发面膜，专业生产面膜和专精覃思探索消费者的需求，不断创新十年来专注研发面膜。</p>
+			</div>
+			<div class="col-md-6 box">
+				<div class="date1">20<span>2015-03</span></div>
+				<a href="zixun_desc.html"><img src="__IMG__/list5.png" alt="" class="img-responsive"></a>
+				<h3>实体店该如何面对电商冲击</h3>
+				<div class="date2">2015-03-20</div>
+				<p>熬夜肌肤修复专家。天姿曼为广州美莲葆公司旗下品牌，十年来专注研发面膜，专业生产面膜和专精覃思探索消费者的需求，不断创新十年来专注研发面膜。</p>
+			</div>
+			<div class="col-md-6 box">
+				<div class="date1">20<span>2015-03</span></div>
+				<a href="zixun_desc.html"><img src="__IMG__/list6.png" alt="" class="img-responsive"></a>
+				<h3>实体店该如何面对电商冲击</h3>
+				<div class="date2">2015-03-20</div>
+				<p>熬夜肌肤修复专家。天姿曼为广州美莲葆公司旗下品牌，十年来专注研发面膜，专业生产面膜和专精覃思探索消费者的需求，不断创新十年来专注研发面膜。</p>
+			</div> -->
+		</div>
+	</div>
+	
+	<!-- 分页 -->
+	<nav aria-label="Page navigation">
+	  <ul class="pagination">
+	    <li>
+	      <a href="#" aria-label="Previous">
+	        <span aria-hidden="true">上一页</span>
+	      </a>
+	    </li>
+	    <li><a href="#">1</a></li>
+	    <li><a href="#">2</a></li>
+	    <li><a href="#">3</a></li>
+	    <li><a href="#">4</a></li>
+	    <li><a href="#">5</a></li>
+	    <li>
+	      <a href="#" aria-label="Next">
+	        <span aria-hidden="true">下一页</span>
+	      </a>
+	    </li>
+	  </ul>
+	</nav>
+

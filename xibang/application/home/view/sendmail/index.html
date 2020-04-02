@@ -1,0 +1,25 @@
+{__NOLAYOUT__} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="__CSS__/layui.css">
+</head>
+<body>
+
+  
+    <h1>{$msg}</h1>
+    <form class="layui-form" >
+        <input type="text" required lay-verify="required" placeholder="请输入您要发送邮件的邮箱地址" autocomplete="off" class="layui-input toUser" ><br>
+        <input type="text" required lay-verify='required' placeholder="请输入标题" autocomplete="off" class="layui-input title"><br>
+        <input type="text" required lay-verify='required' placeholder="输入内容" autocomplete="off" class="layui-input content"><br>
+        <button class="layui-btn layui-btn-sm" lay-submit lay-filter='send'>立即发送</button>
+    </form>  
+
+</body>
+    <script src="__JS__/layui.js"></script>
+    <script src="__JS__/sendMail.js"></script>
+</html>
